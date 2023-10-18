@@ -182,29 +182,3 @@ class KNearestNeighbor:
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
         return y_pred
-
-
-if __name__ == '__main__':
-    # unit test with toy data
-
-    X_train = np.array([[1, 2, 3], [4, 5, 6]])
-    y_train = np.array([0, 1])
-    X_test = np.array([[1, 2, 3], [4, 5, 6]])
-    y_test = np.array([0, 1])
-    knn = KNearestNeighbor()
-    knn.fit(X_train, y_train)
-    y_pred = knn.predict(X_test, k=1, num_loops=0)
-    print(y_pred)
-    # print('accuracy: %s' % knn.compute_accuracy(y_pred, y_test))
-    # print(knn.compute_distances_no_loops(X_test))
-    # print(knn.compute_distances_no_loops_(X_test))
-    # now the same but with bigger data
-    X_train = np.random.randint(0, 100, (100, 100))
-    y_train = np.random.randint(0, 10, (100,))
-    knn.fit(X_train, y_train)
-    # y_pred = knn.predict(X_test, k=1, num_loops=0)
-    # print(knn.compute_distances_no_loops(X_train))
-    # print(knn.compute_distances_no_loops_(X_train))
-    # a_comp = knn.compute_distances_no_loops(X_train)
-    # b_comp = knn.compute_distances_no_loops_(X_train)
-    # assert np.equal(a_comp, b_comp).all()
